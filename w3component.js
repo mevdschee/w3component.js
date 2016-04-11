@@ -9,8 +9,8 @@ var w3component = $(function(){
 		});
 	}
 	var handleComponent = function(){
-		var path = $(this).attr('w3component');
 		if ($(this).attr('rendered')) return;
+		var path = $(this).attr('w3component');
 		var name = path.split('/').pop();
 		if (self.components[name]===null) return;
 		if (self.components[name]!==undefined) return render(path,name);
