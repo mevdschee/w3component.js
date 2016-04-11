@@ -16,10 +16,10 @@ $(function(){
 		$.ajax({dataType:'text', url: './'+name+'.html',success:function(data){
 			template = data;
 			$('<script>').attr('src',name+'.js').appendTo('body').on('load',function(){
-        $(['div.w3component[w3component="'+name+'"]']).each(function(){
-  				window.components[name]($(this),template);
-  			});
-      });
+				$(['div.w3component[w3component="'+name+'"]']).each(function(){
+					window.components[name]($(this),template);
+				});
+			});
 		}});
 	}
 
