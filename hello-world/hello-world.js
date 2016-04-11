@@ -1,4 +1,4 @@
-window.components['hello-world'] = function (element, template) {
+w3component.components['hello-world'] = function (element, template) {
 	var self = this;
 	var state = {};
 	self.submit = function(e) {

@@ -1,4 +1,4 @@
-window.components['x-clock'] = function (element, template) {
+w3component.components['x-clock'] = function (element, template) {
 	var self = this;
 	var state = {};
 	self.render = function(data) {
