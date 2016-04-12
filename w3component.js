@@ -4,12 +4,12 @@ var w3component = $(function(){
 	var templates = {};
 	var render = function(src,name){
 		$(['div.w3component[data-src="'+src+'"]']).each(function(){
-			$(this).attr('rendered',1);
+			$(this).attr('data-rendered',1);
 			new self.components[name]($(this),templates[name]);
 		});
 	}
 	var handle = function(){
-		if ($(this).attr('rendered')) return;
+		if ($(this).attr('data-rendered')) return;
 		var src = $(this).attr('data-src');
 		var name = src.split('/').pop();
 		if (self.components[name]===null) return;
