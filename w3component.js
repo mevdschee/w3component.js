@@ -2,31 +2,31 @@ var w3component = $(function(){
 	var self = this;
 	self.components = {};
 	var templates = {};
-	var render = function(path,name){
-		$(['div.w3component[w3component="'+path+'"]']).each(function(){
+	var render = function(src,name){
+		$(['div.w3component[data-src="'+src+'"]']).each(function(){
 			$(this).attr('rendered',1);
 			new self.components[name]($(this),templates[name]);
 		});
 	}
-	var handleComponent = function(){
+	var handle = function(){
 		if ($(this).attr('rendered')) return;
-		var path = $(this).attr('w3component');
-		var name = path.split('/').pop();
+		var src = $(this).attr('data-src');
+		var name = src.split('/').pop();
 		if (self.components[name]===null) return;
-		if (self.components[name]!==undefined) return render(path,name);
+		if (self.components[name]!==undefined) return render(src,name);
 		self.components[name] = null;
-		$.ajax({dataType:'text', url: path+'.css',success:function(styles){
+		$.ajax({dataType:'text', url: src+'.css',success:function(styles){
 			$('<style>').appendTo('body').text(styles);
 		}});
-		$.ajax({dataType:'text', url: path+'.html',success:function(template){
+		$.ajax({dataType:'text', url: src+'.html',success:function(template){
 			templates[name] = template;
-			$('<script>').attr('src',path+'.js').appendTo('body').on('load',function(){
-				render(path,name);
+			$('<script>').attr('src',src+'.js').appendTo('body').on('load',function(){
+				render(src,name);
 			});
 		}});
 	}
 	self.rescan = function(element){
-		element.find('div.w3component').each(handleComponent);
+		element.find('div.w3component').each(handle);
 	}
 	self.rescan($(document));
 	w3component = self;
