@@ -7,7 +7,7 @@ w3component.components['hello-world'] = function (element, template) {
 		self.render();
 	};
 	self.render = function(data) {
-		element.html(Mustache.to_html(template,state));
+		element.html(Handlebars.compile(template)(state));
 		w3component.rescan(element);
 	};
 	element.on('submit','form',self.submit);

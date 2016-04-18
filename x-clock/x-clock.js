@@ -7,7 +7,7 @@ w3component.components['x-clock'] = function (element, template) {
 	  minute = "" + now.getMinutes(); if (minute.length == 1) { minute = "0" + minute; }
 	  second = "" + now.getSeconds(); if (second.length == 1) { second = "0" + second; }
 	  state.time = hour + ":" + minute + ":" + second;
-		element.html(Mustache.to_html(template,state));
+		element.html(Handlebars.compile(template)(state));
 	};
 	self.start = function() {
 		self.render();
