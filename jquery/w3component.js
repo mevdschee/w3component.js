@@ -3,7 +3,7 @@ var w3component = $(function(){
 	self.components = {};
 	var templates = {};
 	var render = function(src,name){
-		$(['div.w3component[data-src="'+src+'"]']).each(function(){
+		$('div.w3component[data-src="'+src+'"]').each(function(){
 			$(this).attr('data-rendered',1);
 			new self.components[name]($(this),templates[name]);
 		});
