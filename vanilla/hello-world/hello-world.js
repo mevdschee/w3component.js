@@ -3,7 +3,7 @@ w3component.components['hello-world'] = function (element, template) {
 	var state = {};
 	self.submit = function(e) {
 		e.preventDefault();
-		state.world = this.querySelector('input[name="world"]').value;
+		state.world = e.target.querySelector('input[name="world"]').value;
 		self.render();
 	};
 	self.render = function(data) {
