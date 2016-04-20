@@ -22,7 +22,7 @@ w3component.components['x-clock'] = function (element, template) {
 		else self.start();
 	};
 	element.addEventListener('click',function(e){
-		if (e.taget.tagName.toLowerCase()=='b') {
+		if (e.target.tagName.toLowerCase()=='b') {
 			self.startStop()
 		}
 	});
