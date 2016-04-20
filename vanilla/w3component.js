@@ -1,5 +1,4 @@
-var w3component;
-window.addEventListener("load",function(){
+var w3component = window.addEventListener("load",function(){
 	var self = this;
 	self.components = {};
 	var templates = {};
@@ -46,4 +45,4 @@ window.addEventListener("load",function(){
 	}
 	self.rescan(document.body);
 	w3component = self;
-},false);
+});
