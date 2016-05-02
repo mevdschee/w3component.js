@@ -6,7 +6,7 @@ w3component.components['hello-world'] = function (element, template) {
 		state.world = e.target.querySelector('input[name="world"]').value;
 		self.render();
 	};
-	self.render = function(data) {
+	self.render = function() {
 		element.innerHTML = Handlebars.compile(template)(state);
 		w3component.rescan(element);
 	};

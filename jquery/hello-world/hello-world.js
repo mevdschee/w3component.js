@@ -6,7 +6,7 @@ w3component.components['hello-world'] = function (element, template) {
 		state.world = $(this).find('input[name="world"]').val();
 		self.render();
 	};
-	self.render = function(data) {
+	self.render = function() {
 		element.html(Handlebars.compile(template)(state));
 		w3component.rescan(element);
 	};
