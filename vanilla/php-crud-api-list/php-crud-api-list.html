@@ -1,0 +1,20 @@
+<table>
+<thead>
+<tr>
+    <th>id</th>
+    <th>author</th>
+    <th>category</th>
+    <th>content</th>
+</tr>
+</thead>
+<tbody>
+{{#each data.posts}}
+<tr>
+    <td>{{id}}</td>
+    <td>{{users.[0].username}}</td>
+    <td>{{categories.[0].name}}</td>
+    <td>{{content}}</td>
+</tr>
+{{/each}}
+</tbody>
+</table>
