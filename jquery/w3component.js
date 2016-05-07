@@ -5,7 +5,7 @@ var w3component = $(function(){
 	var render = function(src,name){
 		$('div.w3component[data-src="'+src+'"]').each(function(){
 			$(this).attr('data-rendered',1);
-			new self.components[name]($(this),templates[name]);
+			this.w3component = new self.components[name]($(this),templates[name]);
 		});
 	}
 	var handle = function(){
