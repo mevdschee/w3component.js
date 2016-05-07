@@ -6,7 +6,7 @@ var w3component = window.addEventListener("load",function(){
 		var elements = document.querySelectorAll('div.w3component[data-src="'+src+'"]');
 		for (var i=0;i<elements.length;i++) (function(){
 			this.setAttribute('data-rendered',1);
-			new self.components[name](this,templates[name]);
+			this.component = new self.components[name](this,templates[name]);
 		}).call(elements[i]);
 	}
 	var handle = function(){
